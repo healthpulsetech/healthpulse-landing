@@ -1,31 +1,74 @@
 @import "tailwindcss";
 
+/* Define base variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #F7FBFF;        
+  --foreground: #302F2F;         
+  --primary: #302F2F;            
+  --secondary: #004D99;          
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Tailwind CSS theme inline integration */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* Optional dark mode override */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #ededed;
+    --secondary: #89bfff;
   }
-}
+} */
 
+/* Apply global styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Ensure Ant Design components work well with your theme */
+/* Custom Tailwind-like utility classes */
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .text-secondary {
+    color: var(--secondary);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .text-background {
+    color: var(--background);
+  }
+}
+
+/* Ant Design component fix */
 .ant-typography {
   color: var(--foreground) !important;
 }

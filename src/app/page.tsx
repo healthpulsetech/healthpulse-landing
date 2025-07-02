@@ -1,9 +1,13 @@
-
+"use client"
+import NavBar from "@/components/layout/header"
 export default function Page(){
   return(
     
     <div>
-      <p className="text-center">This is my first next js </p>
+      <NavBar />
+      
+
+     
     </div>
   )
 }

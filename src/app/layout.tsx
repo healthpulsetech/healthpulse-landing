@@ -1,37 +1,35 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { AntdRegistry } from '@ant-design/nextjs-registry';
-import "./globals.css";
+import type { Metadata } from "next"
+import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google"
+import Providers from "./providers"
+import "./globals.css"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = FontSans({
   subsets: ["latin"],
-});
+  variable: "--font-sans",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontMono = FontMono({
   subsets: ["latin"],
-});
+  variable: "--font-mono",
+})
 
 export const metadata: Metadata = {
   title: "HealthPulse",
   description: "Your health monitoring application",
-};
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <AntdRegistry>
+      <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
+      <Providers>
           {children}
-        </AntdRegistry>
+        </Providers>
       </body>
     </html>
-  );
+  )
 }
