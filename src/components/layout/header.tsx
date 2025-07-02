@@ -21,7 +21,7 @@ export default function NavBar() {
             height={32}
             className="sm:w-10 sm:h-10"
           />
-          <p className="font-bold text-lg sm:text-xl ml-2 text-gray-800">
+          <p className="font-bold text-lg sm:text-xl ml-2 text-secondary">
             HealthPulse
           </p>
         </div>
