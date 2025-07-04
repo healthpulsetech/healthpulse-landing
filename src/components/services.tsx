@@ -46,20 +46,20 @@ export const Services = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut", // Using string instead of array
+        ease: "easeOut",
       },
     },
   }
 
   return (
-    <div className="py-12 px-4 max-w-7xl mx-auto">
+    <div className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="text-center mb-12"
+        className="text-center mb-8 sm:mb-12"
       >
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 px-4">
           Our <span className="text-secondary">Services</span>
         </h1>
       </motion.div>
@@ -68,31 +68,36 @@ export const Services = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 place-items-center"
       >
         {services.map((service) => (
           <motion.div
             key={service.id}
             variants={cardVariants}
             whileHover={{
-              scale: 1.05,
+              scale: 1.03,
               transition: { duration: 0.2 },
             }}
+            className="w-full max-w-sm"
           >
-            <Card className="h-[400px] w-[380px] shadow-[0_-4px_16px_rgba(0,0,0,0.15),0_8px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_-6px_20px_rgba(0,0,0,0.2),0_12px_32px_rgba(0,0,0,0.15)] transition-shadow duration-300 border-0">
-              <CardBody className="p-4 text-center flex flex-col items-center justify-between h-full">
+            <Card className="h-[350px] sm:h-[380px] md:h-[400px] w-full shadow-[0_-4px_16px_rgba(0,0,0,0.15),0_8px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_-6px_20px_rgba(0,0,0,0.2),0_12px_32px_rgba(0,0,0,0.15)] transition-shadow duration-300 border-0">
+              <CardBody className="p-4 sm:p-6 text-center flex flex-col items-center justify-between h-full">
                 <div className="flex-shrink-0 mt-2">
                   <Image
                     src={character || "/placeholder.svg"}
                     alt={service.title}
-                    width={120}
-                    height={120}
-                    className="object-contain"
+                    width={100}
+                    height={100}
+                    className="object-contain sm:w-[120px] sm:h-[120px] md:w-[130px] md:h-[130px]"
                   />
                 </div>
-                <div className="flex flex-col justify-center items-center space-y-4 px-2 relative bottom-25">
-                  <h3 className="text-lg font-semibold text-secondary leading-tight text-center">{service.title}</h3>
-                  <p className="text-sm text-primary leading-relaxed text-center">{service.description}</p>
+                <div className="flex flex-col justify-center items-center space-y-3 sm:space-y-4 px-2 flex-1">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-secondary leading-tight text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-primary leading-relaxed text-center">
+                    {service.description}
+                  </p>
                 </div>
               </CardBody>
             </Card>
@@ -114,4 +119,5 @@ export const Services = () => {
     </div>
   )
 }
+
 export default Services
