@@ -3,6 +3,7 @@ import NavBar from "@/components/layout/header"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
 import Features from "@/components/features"
+import ContactUs from "@/components/contact"
 
 export default function Page(){
   return(
@@ -12,6 +13,7 @@ export default function Page(){
       <Hero />
       <Services/>
       <Features />
+      <ContactUs />
     
       
       
