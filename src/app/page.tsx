@@ -4,6 +4,7 @@ import Hero from "@/components/hero"
 import Services from "@/components/services"
 import Features from "@/components/features"
 import ContactUs from "@/components/contact"
+import HealthPulseFooter from "@/components/layout/footer"
 
 export default function Page(){
   return(
@@ -14,6 +15,7 @@ export default function Page(){
       <Services/>
       <Features />
       <ContactUs />
+      <HealthPulseFooter />
     
       
       
