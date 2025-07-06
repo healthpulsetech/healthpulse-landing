@@ -9,7 +9,7 @@ import rafiki from "@/assets/rafiki.jpg"
 
 const Hero: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 ">
+    <div className=" flex flex-col lg:flex-row items-center justify-center pt-0 px-4 ">
       {/* Text Content */}
       <motion.div
         className="w-full lg:w-1/2 flex justify-center items-center p-4 lg:p-8 order-2 lg:order-1"
