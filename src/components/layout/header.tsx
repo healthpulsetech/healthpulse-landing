@@ -5,6 +5,7 @@ import { Link, Button } from "@heroui/react";
 import logo from "@/assets/logo.png";
 import Image from "next/image";
 import { navItems } from "@/config/route";
+import { RocketIcon } from "lucide-react";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,19 +42,21 @@ export default function NavBar() {
 
         {/* Desktop: Right actions */}
         <div className="hidden sm:flex items-center gap-4">
-          <Link
+          {/* <Link
             href="/login"
             className="hidden md:block text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm lg:text-base"
           >
             Login
-          </Link>
+          </Link> */}
           <Button
-            as={Link}
-            href="/signup"
-            className="bg-blue-600 text-white px-4 py-2 lg:px-6 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
-          >
-            Sign up
-          </Button>
+  as={Link}
+  href="/signup"
+  className="bg-secondary text-white px-4 py-2 lg:px-6 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm font-medium flex items-center gap-2"
+>
+  <RocketIcon className="w-4 h-4" />
+  Get Started
+</Button>
+
         </div>
 
         {/* Mobile: Hamburger menu toggle - Always on the right */}
@@ -84,21 +87,21 @@ export default function NavBar() {
             ))}
 
             <div className="border-t border-gray-200 pt-4 mt-4 space-y-4">
-              <Link
+              {/* <Link
                 href="/login"
                 className="block text-gray-700 hover:text-blue-600 font-medium py-2 text-lg transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Login
-              </Link>
+              </Link> */}
 
               <Button
                 as={Link}
                 href="/signup"
-                className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium"
+                className="w-full bg-secondary text-white py-3 rounded-md hover:bg-blue-700 transition-colors duration-200 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Sign up
+                Get Started
               </Button>
             </div>
           </div>

@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
             <Button
                 as="a"
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-secondary hover:scale-105 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300"
             >
               <a href="/signup">
                 <motion.span
