@@ -59,7 +59,7 @@ export const Services = () => {
         transition={{ duration: 0.7, ease: "easeInOut" }}
         className="text-center mb-8 sm:mb-12"
       >
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 px-4">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-4 px-4">
           Our <span className="text-secondary">Services</span>
         </h1>
       </motion.div>

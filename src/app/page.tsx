@@ -5,6 +5,7 @@ import Services from "@/components/services"
 import Features from "@/components/features"
 import ContactUs from "@/components/contact"
 import HealthPulseFooter from "@/components/layout/footer"
+import FAQ from "@/components/faqs"
 
 export default function Page(){
   return(
@@ -15,11 +16,9 @@ export default function Page(){
       <Services/>
       <Features />
       <ContactUs />
+      <FAQ />
       <HealthPulseFooter />
     
-      
-      
-
      
     </div>
   )
