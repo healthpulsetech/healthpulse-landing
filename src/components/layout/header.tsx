@@ -11,7 +11,7 @@ export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm px-4 py-3 sticky top-0 z-50">
+    <nav className="bg-white shadow-sm px-4 py-3 sticky top-0 z-50 font-sans">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand - Always on the left */}
         <div className="flex items-center flex-shrink-0">
@@ -33,7 +33,8 @@ export default function NavBar() {
             <Link
               key={index}
               href={item.href}
-              className="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm lg:text-base"
+              className="text-primary hover:text-secondary hover:underline hover:font-medium hover:tracking-wide hover:scale-105 transition-all duration-200 ease-in-out text-sm lg:text-base"
+
             >
               {item.label}
             </Link>

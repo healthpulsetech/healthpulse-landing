@@ -6,6 +6,7 @@ import Features from "@/components/features"
 import ContactUs from "@/components/contact"
 import HealthPulseFooter from "@/components/layout/footer"
 import FAQ from "@/components/faqs"
+import Partnership from "@/components/partners"
 
 export default function Page(){
   return(
@@ -15,9 +16,12 @@ export default function Page(){
       <Hero />
       <Services/>
       <Features />
+      <Partnership />
       <ContactUs />
+      {/* <Partnership /> */}
       <FAQ />
       <HealthPulseFooter />
+
     
      
     </div>
