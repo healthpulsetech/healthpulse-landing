@@ -7,6 +7,7 @@ import ContactUs from "@/components/contact"
 import HealthPulseFooter from "@/components/layout/footer"
 import FAQ from "@/components/faqs"
 import Partnership from "@/components/partners"
+import Records from "@/components/record"
 
 export default function Page(){
   return(
@@ -16,6 +17,7 @@ export default function Page(){
       <Hero />
       <Services/>
       <Features />
+      <Records />
       <Partnership />
       <ContactUs />
       {/* <Partnership /> */}
