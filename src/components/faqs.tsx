@@ -16,37 +16,39 @@ interface AccordionProps {
 
 const accordionItems: AccordionItem[] = [
   {
-    title: "How do I create an Accordion with React and Framer Motion?",
+    title: "What is HealthPulse?",
     description:
-      "To create an Accordion with React and Framer Motion, you can use the AnimatePresence component along with motion elements. Implement a toggle mechanism to control the expanded state of each accordion item.",
+      "HealthPulse is an AI-powered, multilingual digital health assistant designed to improve healthcare access and quality in Rwanda. It provides real-time symptom checks, health education, medication reminders, and hospital queue tracking through voice, SMS/USSD, chatbot, and mobile app—all tailored to local languages and needs.",
   },
   {
-    title: "What are the benefits of using Framer Motion?",
+    title: "Who can use HealthPulse?",
     description:
-      "Framer Motion provides an easy-to-use API for creating smooth animations in React applications. It offers features like gesture recognition, variants for complex animations, and automatic prefixing for cross-browser compatibility.",
+      "Anyone in Rwanda—including patients, caregivers, and Community Health Workers (CHWs)—can use HealthPulse. It’s designed to support both urban and rural populations with different levels of access to technology.",
   },
   {
-    title: "How can I customize the accordion's appearance?",
+    title: "Is HealthPulse free to use?",
     description:
-      "You can customize the accordion's appearance using Tailwind CSS classes. Adjust colors, padding, margins, and other properties to match your desired design. You can also add icons or other elements to enhance the visual appeal.",
+      "Yes. Core features like AI symptom checking and queue tracking are free, supported by partners and donors. Advanced features may be accessed via affordable premium plans.",
   },
   {
-    title:
-      "Is it possible to have multiple accordion items open simultaneously?",
+    title: "How can I access HealthPulse?",
     description:
-      "Yes, it's possible. You would need to modify the state management to use an array or object to track multiple open items instead of a single expanded state. Then, update the toggle logic accordingly.",
+      "You can access HealthPulse through various channels: smartphone app, USSD codes, SMS, IVR voice calls, and WhatsApp chatbot—ensuring inclusion even for users without internet or smartphones.",
   },
   {
-    title: "Can I animate the accordion items when they expand or collapse?",
+    title: "In what languages is HealthPulse available?",
     description:
-      "Yes, you can animate the accordion items using Framer Motion. Apply animations to the content elements within each accordion item, such as height transitions, opacity changes, or custom animations based on your design preferences.",
+      "HealthPulse currently supports Kinyarwanda, English, and French. Both voice and text interfaces are adapted for local comprehension and ease of use.",
   },
 ];
+
 
 const FAQ: React.FC = () => {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
+    <section id="faq" className="scroll-mt-20">
+    
     <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8 font-sans">
       <h1 className="mb-4 bg-white text-secondary text-center text-2xl font-bold">
         Frequently asked questions
@@ -67,7 +69,11 @@ const FAQ: React.FC = () => {
         ))}
       </div>
     </div>
+    
+
+    </section>
   );
+
 };
 
 const Accordion: React.FC<AccordionProps> = ({

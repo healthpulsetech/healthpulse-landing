@@ -72,3 +72,6 @@ body {
 .ant-typography {
   color: var(--foreground) !important;
 }
+html {
+  scroll-behavior: smooth;
+}

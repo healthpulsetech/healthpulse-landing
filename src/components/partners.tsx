@@ -17,6 +17,10 @@ const logos = [
     name: "University Of Rwanda",
     url: partners.URlogo,
   },
+  {
+    name: "Bag Rwanda",
+    url: partners.bagTechnology,
+  },
 ];
 
 const containerVariants = {

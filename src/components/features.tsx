@@ -83,6 +83,8 @@ const Features = () => {
   }
 
   return (
+    <section id="features" className="scroll-mt-20">
+
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-gray-50">
       {/* Title */}
       <motion.div
@@ -144,6 +146,7 @@ const Features = () => {
         </motion.div>
       </div>
     </div>
+    </section>
   )
 }
 

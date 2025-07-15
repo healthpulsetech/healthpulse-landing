@@ -1,20 +1,27 @@
 export const navItems = [
 	{
 		label: "Home",
-		href: "/home",
+		href: "#home",
 	},
 	{
 		label: "Services",
-		href: "/services",
+		href: "#services",
 	},
 	{
 		label: "Features",
-		href: "/features",
+		href: "#features",
 	},
 	{
 		label: "Contact us",
-		href: "contact us",
+		href: "#contactus",
 	},
-	
+	{
+		label: "FAQ",
+		href: "#faq",
+	},
+	{
+		label: "About us",
+		href: "/about",
+	}
 ];
 

@@ -1,13 +1,18 @@
-import masterCardLogo from "@/assets//partners/MCF_Logo.jpg"
-import masterCard from "@/assets/partners/mastercard.png"
-import solidMind from "@/assets/partners/solid.png"
+import masterCardLogo from "@/assets//partners/mastercardOrginal.jpg"
+import masterCard from "@/assets/partners/mastercardOrginal.jpg"
+import solidMind from "@/assets/partners/solidsMind.jpeg"
 import URlogo from "@/assets/partners/ur.jpeg"
+// import Heart from "@/assets/heart.jpg"
+import bagTechnology from "@/assets/partners/bagRwanda.jpeg"
 
 
 const partners = {
     masterCard,
     solidMind,
     masterCardLogo,
-    URlogo
+    URlogo,
+    bagTechnology,
+    
+
 }
 export default partners
