@@ -98,7 +98,7 @@ const Records = () => {
       }}
     >
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-mono" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-poppins" />
 
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden">
@@ -144,7 +144,7 @@ const Records = () => {
           </h1>
           <p
             className={`
-                        text-base md:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed font-mono
+                        text-base md:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed font-poppins
                         ${isVisible ? "animate-fade-in-up-delayed" : "opacity-0 translate-y-8"}
                     `}
           >
@@ -153,7 +153,7 @@ const Records = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 font-mono">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 font-poppins">
           <StatCard value={counters.clinics} label="Total Clinics" delay={100} />
           <StatCard value={counters.doctors} label="Total Doctors" delay={200} />
           <StatCard value={counters.pharmacies} label="Total Pharmacies" delay={300} />

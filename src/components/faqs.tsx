@@ -50,10 +50,10 @@ const FAQ: React.FC = () => {
     <section id="faq" className="scroll-mt-20">
     
     <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8 ">
-      <h1 className="mb-4 bg-white text-secondary text-center text-2xl font-bold font-mono">
+      <h1 className="mb-4 bg-white text-secondary text-center text-2xl font-bold font-poppins">
         Frequently asked questions
       </h1>
-      <p className="mb-10 text-center text-primary font-mono">
+      <p className="mb-10 text-center text-primary font-poppins">
         Need help with something? Here are our most frequently asked questions.
       </p>
       <div className="space-y-4">
@@ -106,7 +106,7 @@ const Accordion: React.FC<AccordionProps> = ({
             : "bg-white dark:bg-gray-900",
         }}
         onClick={() => setExpanded(isOpen ? null : i)}
-        className="flex cursor-pointer items-center justify-between p-4"
+        className="flex cursor-pointer items-center justify-between p-4 font-poppins"
       >
         <h3 className="text-sm text-primary">{title}</h3>
         <div>

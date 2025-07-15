@@ -6,14 +6,29 @@ import { motion } from "framer-motion"
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="scroll-mt-20 relative overflow-hidden bg-secondary font-mono">
-      {/* Animated background blobs */}
-      <div className="absolute inset-0">
+    <section id="home" className="scroll-mt-20 relative overflow-hidden font-poppins">
+      {/* Fullscreen Video Background */}
+      <div className="absolute inset-0 -z-20">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/video/pulses.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Optional animated blobs */}
+      <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-delayed" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-pink-400/10 rounded-full blur-2xl animate-bounce-slow" />
       </div>
 
+      {/* Foreground Content */}
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center pt-16 pb-20 px-4 relative z-10 max-w-7xl mx-auto">
         {/* Left: Text */}
         <motion.div
@@ -28,12 +43,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: [0, -5, 0] }}
             transition={{
               opacity: { duration: 0.8, delay: 0.2 },
-              y: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              },
+              y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 },
             }}
           >
             Empowering Health with HealthPulse
@@ -44,12 +54,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: [1, 0.9, 1], y: 0 }}
             transition={{
-              opacity: {
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2,
-              },
+              opacity: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 },
               y: { duration: 0.8, delay: 0.4 },
             }}
           >
@@ -99,7 +104,7 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right: Video */}
+        {/* Right: Optional mockup or illustration */}
         <motion.div
           className="w-full lg:w-1/2 p-4 lg:p-8 flex justify-center items-center"
           initial={{ opacity: 0, x: 50 }}
@@ -112,34 +117,12 @@ const Hero: React.FC = () => {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
           >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-2xl blur-2xl opacity-20"
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0],
-                opacity: [0.2, 0.3, 0.2],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="relative z-10 w-full h-auto rounded-2xl shadow-2xl"
-            >
-              <source src="/video/pulses.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+           
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Custom Animation Styles */}
+      {/* Custom Animations */}
       <style jsx>{`
         @keyframes pulseDelayed {
           0%, 100% {

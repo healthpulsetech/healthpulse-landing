@@ -8,7 +8,7 @@ import {
   
   export default function Footer() {
     return (
-      <footer className="bg-gradient-to-b from-[#00294d] to-[#010b0e] text-white pt-12 pb-6 font-mono">
+      <footer className="bg-secondary text-white pt-12 pb-6 font-poppins">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
           {/* Left Section */}
           <div>
