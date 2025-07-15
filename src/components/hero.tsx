@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+
 import Image from "next/image"
 import { Button } from "@heroui/react"
 import { motion } from "framer-motion"
@@ -19,7 +20,7 @@ const Hero: React.FC = () => {
         >
           <div className="max-w-md lg:max-w-lg text-center lg:text-left">
             <motion.h1
-              className="text-xl sm:text-lg lg:text-lg xl:text-3xl font-bold mb-4 lg:mb-6 text-primary"
+              className="text-xl md:text-3xl font-bold mb-4 lg:mb-6 text-primary"
               initial={{ opacity: 0, y: 30 }}
               animate={{
                 opacity: 1,
@@ -58,7 +59,7 @@ const Hero: React.FC = () => {
             </motion.h1>
 
             <motion.p
-              className="text-sm sm:text-sm lg:text-sm text-primary mb-6 lg:mb-8 leading-relaxed"
+              className="text-sm md:text-base text-primary mb-6 lg:mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{
                 opacity: [1, 0.9, 1],
@@ -86,7 +87,7 @@ const Hero: React.FC = () => {
               <Button
                 as="a"
                 size="lg"
-                className="bg-secondary hover:scale-105 text-white px-6 py-2 rounded-full font-medium text-sm shadow-lg hover:shadow-xl transform transition-all duration-300"
+                className="bg-secondary hover:scale-105 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300"
               >
                 <a href="/signup">
                   <motion.span
@@ -168,6 +169,65 @@ const Hero: React.FC = () => {
             />
           </motion.div>
         </motion.div>
+
+        {/* Floating Elements */}
+        <motion.div
+          className="absolute top-20 left-10 w-4 h-4 bg-blue-400 rounded-full opacity-60 hidden lg:block"
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.6, 1, 0.6],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-32 right-20 w-6 h-6 bg-purple-400 rounded-full opacity-40 hidden lg:block"
+          animate={{
+            y: [0, 15, 0],
+            x: [0, 10, 0],
+            opacity: [0.4, 0.8, 0.4],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-10 w-3 h-3 bg-green-400 rounded-full opacity-50 hidden lg:block"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.5, 1, 0.5],
+            y: [0, -8, 0],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        />
+
+        {/* Additional animated text elements */}
+        <motion.div
+          className="absolute top-10 left-1/2 transform -translate-x-1/2 text-primary/20 text-6xl font-bold pointer-events-none hidden lg:block"
+          animate={{
+            opacity: [0.1, 0.3, 0.1],
+            scale: [0.8, 1, 0.8],
+            rotate: [0, 2, -2, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        ></motion.div>
       </div>
     </section>
   )
