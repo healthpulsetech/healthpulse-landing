@@ -7,14 +7,14 @@ import { motion } from "framer-motion"
 const Hero: React.FC = () => {
   return (
     <section id="home" className="scroll-mt-20 relative overflow-hidden bg-secondary font-mono">
-      {/* Background animated blobs like Records */}
+      {/* Animated background blobs */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-delayed" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-pink-400/10 rounded-full blur-2xl animate-bounce-slow" />
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center pt-16 pb-20 px-4 relative z-10 max-w-7xl mx-auto">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-center pt-16 pb-20 px-4 relative z-10 max-w-7xl mx-auto">
         {/* Left: Text */}
         <motion.div
           className="w-full lg:w-1/2 p-4 lg:p-8 text-center lg:text-left"
@@ -36,26 +36,7 @@ const Hero: React.FC = () => {
               },
             }}
           >
-            Empowering Health with  HealthPulse{" "}
-            {/* <motion.span
-              className="text-secondary"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: [1, 0.7, 1],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                opacity: { duration: 0.8, delay: 0.5 },
-                scale: {
-                  duration: 2.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.5,
-                },
-              }}
-            >
-              HealthPulse
-            </motion.span> */}
+            Empowering Health with HealthPulse
           </motion.h1>
 
           <motion.p
@@ -157,23 +138,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Extra Text Floating Elements (optional) */}
-      {/* <motion.div
-        className="absolute top-10 left-1/2 transform -translate-x-1/2 text-primary/10 text-6xl font-bold pointer-events-none hidden lg:block"
-        animate={{
-          opacity: [0.1, 0.3, 0.1],
-          scale: [0.8, 1, 0.8],
-          rotate: [0, 2, -2, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        HealthPulse
-      </motion.div> */}
 
       {/* Custom Animation Styles */}
       <style jsx>{`
