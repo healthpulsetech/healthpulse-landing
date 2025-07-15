@@ -40,7 +40,7 @@ const itemVariants = {
 
 const Partners = () => {
   return (
-    <div className="mx-auto my-10 px-5">
+    <div className="mx-auto my-10 px-5 font-mono">
       <div className="flex flex-col justify-center">
         <div className="text-center mb-8">
           <h2 className="max-w-md  text-xl  relative right-3 font-semibold md:text-2xl">
