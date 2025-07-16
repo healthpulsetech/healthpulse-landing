@@ -84,13 +84,13 @@ const Features = () => {
 
   return (
     <section id="features" className="scroll-mt-20 font-poppins">
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-gray-50">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8 sm:py-12 bg-gray-50">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-16"
         >
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
             Key <span className="text-secondary">Features</span>

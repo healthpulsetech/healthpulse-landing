@@ -56,27 +56,25 @@ const services = [
     gradientClass: "gradient-accent-3",
     badge: "Smart Alerts",
   },
-  
-  
 ];
 
 export default function ServicesComponent() {
   return (
     <section id="services" className="scroll-mt-20">
-      <div className="min-h-screen bg-background py-16 px-4 font-poppins">
+      <div className="bg-background py-8 sm:py-16 px-4 font-poppins">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-3 sm:mb-5"
           >
-            <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
+            <h1 className="text-xl sm:text-3xl relative bottom-4 lg:text-4xl font-bold">
               Our <span className="text-secondary">Services</span>
             </h1>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -139,4 +137,3 @@ export default function ServicesComponent() {
     </section>
   );
 }
-//       
