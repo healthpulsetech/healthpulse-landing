@@ -1,127 +1,142 @@
-"use client"
+"use client";
 
-import { Card, CardBody } from "@heroui/card"
-import { motion, type Variants } from "framer-motion"
-import Image from "next/image"
-import character from "../assets/Character.png"
+import {
+  Brain,
+  Video,
+  Pill,
+  MapPin,
+  Building2,
+  ArrowRight,
+} from "lucide-react";
 
-export const Services = () => {
-  const services = [
-    {
-      id: 1,
-      title: "Chat with Virtual Health Assistant",
-      description: "Ask health questions in your language (Kinyarwanda, French, or English) via text or voice.",
-    },
-    {
-      id: 2,
-      title: "Get Medication Reminders",
-      description: "Always receive timely reminders to take medicine with accurate doses.",
-    },
-    {
-      id: 3,
-      title: "Use Health Services without Internet",
-      description: "Get access to key features using USSD codes, even without a smartphone.",
-    },
-  ]
+import { motion } from "framer-motion"; // ✅ Required for motion.div
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
+const services = [
+  {
+    id: 1,
+    title: "Clinic Finder",
+    description:
+      "Locate clinics around you, view open hours and make appointments.",
+    icon: Building2,
+    gradientClass: "gradient-accent-5",
+    badge: "Instant Booking",
+  },
+  {
+    id: 2,
+    title: "Pharmacy Finder",
+    description: "Find nearby pharmacies easily with real-time directions.",
+    icon: MapPin,
+    gradientClass: "gradient-accent-4",
+    badge: "Real-time",
+  },
+  {
+    id: 5,
+    title: "Mental Pulse (Psychologist Booking)",
+    description:
+      "Ask health questions in your language (Kinyarwanda, French, or English) via text or voice.",
+    icon: Brain,
+    gradientClass: "gradient-accent-1",
+    badge: "AI Powered",
+  },
+  {
+    id: 4,
+    title: "Telemedicine Appointments",
+    description:
+      "Connect with healthcare professionals remotely through secure video consultations.",
+    icon: Video,
+    gradientClass: "gradient-secondary",
+    badge: "24/7 Available",
+  },
+  {
+    id: 3,
+    title: "Pill Reminders",
+    description:
+      "Always receive timely reminders to take medicine with accurate doses.",
+    icon: Pill,
+    gradientClass: "gradient-accent-3",
+    badge: "Smart Alerts",
+  },
+  
+  
+];
 
-  const cardVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-      scale: 0.9,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  }
-
+export default function ServicesComponent() {
   return (
     <section id="services" className="scroll-mt-20">
-
-    <div className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto font-poppins">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="text-center mb-8 sm:mb-12"
-      >
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold mb-4 px-4">
-          Our <span className="text-secondary">Services</span>
-        </h1>
-      </motion.div>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 place-items-center"
-      >
-        {services.map((service) => (
+      <div className="min-h-screen bg-background py-16 px-4 font-poppins">
+        <div className="max-w-6xl mx-auto">
           <motion.div
-            key={service.id}
-            variants={cardVariants}
-            whileHover={{
-              scale: 1.03,
-              transition: { duration: 0.2 },
-            }}
-            className="w-full max-w-sm"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            <Card className="h-[350px] sm:h-[380px] md:h-[400px] w-full shadow-[0_-4px_16px_rgba(0,0,0,0.15),0_8px_24px_rgba(0,0,0,0.12)] hover:shadow-[0_-6px_20px_rgba(0,0,0,0.2),0_12px_32px_rgba(0,0,0,0.15)] transition-shadow duration-300 border-0">
-              <CardBody className="p-4 sm:p-6 text-center flex flex-col items-center justify-between h-full">
-                <div className="flex-shrink-0 mt-2">
-                  <Image
-                    src={character || "/placeholder.svg"}
-                    alt={service.title}
-                    width={100}
-                    height={100}
-                    className="object-contain sm:w-[120px] sm:h-[120px] md:w-[130px] md:h-[130px]"
-                  />
-                </div>
-                <div className="flex flex-col justify-center items-center space-y-3 sm:space-y-4 px-2 flex-1">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-secondary leading-tight text-center">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-primary leading-relaxed text-center">
-                    {service.description}
-                  </p>
-                </div>
-              </CardBody>
-            </Card>
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold">
+              Our <span className="text-secondary">Services</span>
+            </h1>
           </motion.div>
-        ))}
-      </motion.div>
 
-      {/* Optional Navigation Arrows */}
-      {/*
-      <div className="flex justify-center space-x-4 mt-8">
-        <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-          <ChevronLeft size={20} className="text-gray-600" />
-        </button>
-        <button className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
-          <ChevronRight size={20} className="text-gray-600" />
-        </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div
+                  key={service.id}
+                  className="group relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur-sm border border-white/30 shadow-lg transition-all duration-500 transform hover:-translate-y-3 cursor-pointer"
+                  style={{
+                    animationDelay: `${index * 150}ms`,
+                  }}
+                >
+                  {/* Badge */}
+                  <div className="absolute top-6 right-6 z-10">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-secondary text-background shadow-lg">
+                      {service.badge}
+                    </span>
+                  </div>
+
+                  <div className="p-8">
+                    {/* Icon */}
+                    <div
+                      className={`w-16 h-16 rounded-2xl ${service.gradientClass} p-4 mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    >
+                      <IconComponent className="w-full h-full text-secondary" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-primary group-hover:text-secondary transition-colors duration-300 mb-4 leading-tight">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-primary/70 leading-relaxed text-sm mb-6 line-clamp-3">
+                      {service.description}
+                    </p>
+
+                    {/* Learn More */}
+                    <div className="flex items-center text-secondary font-medium group-hover:translate-x-2 transition-transform duration-300">
+                      <span className="text-sm">Learn More</span>
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </div>
+                  </div>
+
+                  {/* Blue hover lines */}
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-secondary group-hover:w-full transition-all duration-500" />
+                  <div className="absolute left-0 top-0 h-0 w-1 bg-secondary group-hover:h-full transition-all duration-500" />
+                  <div className="absolute right-0 top-0 h-0 w-1 bg-secondary group-hover:h-full transition-all duration-500" />
+
+                  {/* Shine effects */}
+                  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms]" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[2000ms] delay-200" />
+                    <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-[3000ms] delay-500" />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      */}
-    </div>
-    
     </section>
-  )
+  );
 }
-
-export default Services
+//       

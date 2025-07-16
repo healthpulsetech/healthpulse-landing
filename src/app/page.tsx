@@ -15,8 +15,8 @@ export default function Page(){
     <div>
       <NavBar />
       <Hero />
-      <Services/>
       <Features />
+      <Services/>
       <Records />
       <Partnership />
       <ContactUs />

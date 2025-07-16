@@ -13,7 +13,7 @@ import {
           {/* Left Section */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo.src} alt="HealthPulse Logo" className="w-10 h-10" />
+              <img src={logo.src} alt="HealthPulse Logo" className="w-20 h-20" />
               <h2 className="text-2xl font-bold">HealthPulse</h2>
             </div>
             <p className="text-sm text-gray-300 mb-6">
