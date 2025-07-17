@@ -1,16 +1,21 @@
-"use client"
-import NavBar from "@/components/layout/header"
-import Hero from "@/components/hero"
-import Services from "@/components/services"
-import Features from "@/components/features"
-import ContactUs from "@/components/contact"
-import HealthPulseFooter from "@/components/layout/footer"
-import FAQ from "@/components/faqs"
-import Partnership from "@/components/partners"
-import Records from "@/components/record"
+"use client";
+
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-export default function Page(){
+import { Suspense } from "react";
+
+import NavBar from "@/components/layout/header";
+import Hero from "@/components/hero";
+import Services from "@/components/services";
+import Features from "@/components/features";
+import ContactUs from "@/components/contact";
+import HealthPulseFooter from "@/components/layout/footer";
+import FAQ from "@/components/faqs";
+import Partnership from "@/components/partners";
+import Records from "@/components/record";
+
+// The logic must be inside a separate client component or suspended
+function ScrollHandler() {
   const params = useSearchParams();
 
   useEffect(() => {
@@ -23,22 +28,28 @@ export default function Page(){
     }
   }, [params]);
 
-  return(
-    
-    <div>
-      <NavBar />
-      <Hero />
-      <Features />
-      <Services/>
-      <Records />
-      <Partnership />
-      <ContactUs />
-      {/* <Partnership /> */}
-      <FAQ />
-      <HealthPulseFooter />
+  return null;
+}
 
-    
-     
-    </div>
-  )
+export default function Page() {
+  return (
+    <>
+      {/* This Suspense boundary is required for useSearchParams to work */}
+      <Suspense fallback={null}>
+        <ScrollHandler />
+      </Suspense>
+
+      <div>
+        <NavBar />
+        <Hero />
+        <Features />
+        <Services />
+        <Records />
+        <Partnership />
+        <ContactUs />
+        <FAQ />
+        <HealthPulseFooter />
+      </div>
+    </>
+  );
 }

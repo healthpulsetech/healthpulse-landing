@@ -46,7 +46,7 @@ export default function NavBar() {
             <button
               key={index}
               onClick={() => handleNavClick(item)}
-              className="text-primary font-mono text-xs lg:text-sm"
+              className="text-primary font-poppins text-xs lg:text-sm"
             >
               {item.label}
             </button>
@@ -85,7 +85,7 @@ export default function NavBar() {
               <button
                 key={index}
                 onClick={() => handleNavClick(item)}
-                className="block text-gray-700 text-sm w-full text-left"
+                className="block text-primary text-sm w-full text-left"
               >
                 {item.label}
               </button>
