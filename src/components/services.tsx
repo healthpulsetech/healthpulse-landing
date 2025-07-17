@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import { motion } from "framer-motion"; // ✅ Required for motion.div
+import { motion } from "framer-motion"; 
 
 const services = [
   {

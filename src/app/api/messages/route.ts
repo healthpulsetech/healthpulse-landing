@@ -44,7 +44,6 @@ export async function POST(req: NextRequest) {
       body: adminEmailHtml,
     });
 
-    // 2. Send confirmation email to the sender
     const userConfirmationHtml = generateEmailTemplate({
       name: fullName,
       title: "We've received your message",

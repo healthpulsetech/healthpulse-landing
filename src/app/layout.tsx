@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google"
+import { Toaster } from "react-hot-toast";
 import Providers from "./providers"
 import "./globals.css"
 
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
       <Providers>
+      <Toaster position="top-right" />
           {children}
         </Providers>
       </body>
