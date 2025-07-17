@@ -8,8 +8,21 @@ import HealthPulseFooter from "@/components/layout/footer"
 import FAQ from "@/components/faqs"
 import Partnership from "@/components/partners"
 import Records from "@/components/record"
-
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 export default function Page(){
+  const params = useSearchParams();
+
+  useEffect(() => {
+    const sectionId = params.get("scrollTo");
+    if (sectionId) {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [params]);
+
   return(
     
     <div>

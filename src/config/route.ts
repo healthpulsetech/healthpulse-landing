@@ -1,27 +1,10 @@
-export const navItems = [
-	{
-		label: "Home",
-		href: "#home",
-	},
-	{
-		label: "Services",
-		href: "#services",
-	},
-	{
-		label: "Features",
-		href: "#features",
-	},
-	{
-		label: "Contact us",
-		href: "#contactus",
-	},
-	{
-		label: "FAQ",
-		href: "#faq",
-	},
-	{
-		label: "About us",
-		href: "/about",
-	}
-];
 
+export const navItems = [
+	{ label: "Home", href: "#home", type: "anchor" },
+	{ label: "Services", href: "#services", type: "anchor" },
+	{ label: "Features", href: "#features", type: "anchor" },
+	{ label: "Contact us", href: "#contactus", type: "anchor" },
+	{ label: "FAQ", href: "#faq", type: "anchor" },
+	{ label: "About us", href: "/about", type: "route" },
+  ];
+  

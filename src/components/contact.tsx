@@ -4,7 +4,7 @@
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { User, BookText, MessageCircle, Loader2 } from 'lucide-react'; // Added Loader2 icon
+import { User, BookText, MessageCircle, Loader2 } from 'lucide-react';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({

@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
               as="a"
               size="lg"
               className="bg-white text-secondary hover:bg-blue-100 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300"
-              href="/signup"
+              href="#contactus"
             >
               <motion.span
                 animate={{
