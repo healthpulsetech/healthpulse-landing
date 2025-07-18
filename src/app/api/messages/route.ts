@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import sendEmail from "@/helpers/sendEmail"
-import generateEmailTemplate from "@/helpers/templates.helper"; 
+import sendEmail from "@/helpers/sendEmail";
+import generateEmailTemplate from "@/helpers/templates.helper";
 
 type ContactFormData = {
   firstName: string;
@@ -10,12 +10,19 @@ type ContactFormData = {
   requestType?: string;
 };
 
+
+const departmentEmails: Record<string, string> = {
+  demo: "team@healthpulse.africa",
+  support: "support@healthpulse.africa",
+  partnership: "partnerships@healthpulse.africa",
+  general: "team@healthpulse.africa", 
+};
+
 export async function POST(req: NextRequest) {
   try {
     const formData: ContactFormData = await req.json();
-    const { firstName, lastName, email, message, requestType } = formData;
+    const { firstName, lastName, email, message, requestType = "general" } = formData;
 
-   
     if (!firstName || !lastName || !email || !message) {
       return NextResponse.json(
         { message: "Missing required fields" },
@@ -25,7 +32,10 @@ export async function POST(req: NextRequest) {
 
     const fullName = `${firstName} ${lastName}`;
 
-    // 1. Send email to HealthPulse Africa team (admin)
+   
+    const recipientEmail = departmentEmails[requestType.toLowerCase()] || departmentEmails.general;
+
+    
     const adminEmailHtml = generateEmailTemplate({
       name: "HealthPulse Africa Team",
       title: "New Contact Form Submission",
@@ -34,22 +44,26 @@ export async function POST(req: NextRequest) {
       listItems: [
         `Name: ${fullName}`,
         `Email: ${email}`,
-        `Request Type: ${requestType || "General"}`,
+        `Request Type: ${requestType}`,
       ],
     });
 
     await sendEmail({
-      to: "support@healthpulse.africa", 
-      subject: `New Contact Submission: ${requestType || "General"}`,
+      to: recipientEmail,
+      subject: `New Contact Submission: ${requestType}`,
       body: adminEmailHtml,
     });
 
+    
     const userConfirmationHtml = generateEmailTemplate({
       name: fullName,
       title: "We've received your message",
       alertMessage: "Your message has been sent successfully.",
-      bodyMessage: "Thank you for contacting HealthPulse Africa. We'll get back to you as soon as possible",
-      listItems: [`Request Type: ${requestType || "General"}`, `Message: "${message}"`],
+      bodyMessage: "Thank you for contacting HealthPulse Africa. We'll get back to you as soon as possible.",
+      listItems: [
+        `Request Type: ${requestType}`,
+        `Message: "${message}"`,
+      ],
     });
 
     await sendEmail({
