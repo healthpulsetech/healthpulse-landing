@@ -11,7 +11,7 @@ const TeamSection = () => {
           <h1 className="text-xl md:text-2xl font-extrabold mb-5 text-primary tracking-tight">
             Our <span className="text-secondary">Mission</span>
           </h1>
-          <p className="text-sm text-primary leading-relaxed  font-poppins">
+          <p className="text-base text-primary leading-relaxed  font-poppins">
             To empower individuals and healthcare workers with intelligent,
             locally adaptable tools that enhance preventive care by delivering
             innovative, patient-centric solutions that improve access, quality,

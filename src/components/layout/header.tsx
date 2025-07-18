@@ -46,7 +46,7 @@ export default function NavBar() {
             <button
               key={index}
               onClick={() => handleNavClick(item)}
-              className="text-primary font-poppins text-xs lg:text-sm"
+              className="text-primary font-poppins text-xs lg:text-sm cursor-pointer"
             >
               {item.label}
             </button>
