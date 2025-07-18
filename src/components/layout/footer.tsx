@@ -34,27 +34,27 @@ import {
           <div>
             <h3 className="text-lg font-semibold mb-4">Find us</h3>
             <ul className="text-sm space-y-2 text-gray-300">
-              <li>Email: info@healthpulse.com</li>
+              <li>Email: support@healthpulse.africa</li>
               <li>Contact: +250788667766</li>
-              <li>KN 4 Ave</li>
+              <li>Address: Kigali, Rwanda</li>
             </ul>
           </div>
   
           {/* Right Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Product</h3>
+            <h3 className="text-lg font-semibold mb-4">HealthPulse</h3>
             <ul className="text-sm space-y-2 text-gray-300">
-              <li><a href="#">System settings</a></li>
-              <li><a href="#">Help center</a></li>
-              <li><a href="#">Ask for questions</a></li>
-              <li><a href="#">Communications</a></li>
-              <li><a href="#">Account management</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#faq">Ask for questions</a></li>
+              <li><a href="#contactus">Communications</a></li>
+              <li><a href="#contactus">Contact us</a></li>
             </ul>
           </div>
         </div>
   
         {/* Bottom line */}
-        <div className="mt-12 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
+        <div className="mt-12 border-t border-white pt-4 text-center text-sm text-white">
           HealthPulse © {new Date().getFullYear()}
         </div>
       </footer>
