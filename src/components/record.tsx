@@ -98,7 +98,7 @@ const Records = () => {
       }}
     >
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-poppins" />
+      <div className="absolute inset-0 tracking-tight bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-pink-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-poppins" />
 
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden">

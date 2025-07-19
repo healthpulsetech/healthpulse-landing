@@ -7,13 +7,14 @@ import { Suspense } from "react";
 import NavBar from "@/components/layout/header";
 import Hero from "@/components/hero";
 import Services from "@/components/services";
-import Features from "@/components/features";
+// import Features from "@/components/features";
 import ContactUs from "@/components/contact";
 import HealthPulseFooter from "@/components/layout/footer";
 import FAQ from "@/components/faqs";
 import Partnership from "@/components/partners";
 import Records from "@/components/record";
-
+import HowItWorksPage from "@/components/journey";
+// import ReservationForm from "@/components/sub";
 // The logic must be inside a separate client component or suspended
 function ScrollHandler() {
   const params = useSearchParams();
@@ -40,14 +41,21 @@ export default function Page() {
       </Suspense>
 
       <div>
+    
         <NavBar />
         <Hero />
-        <Features />
         <Services />
+        < HowItWorksPage/>
+        {/* <Features /> */}
+
+        {/* <Services /> */}
         <Records />
         <Partnership />
         <ContactUs />
         <FAQ />
+        {/* <ReservationForm /> */}
+        {/* <Features /> */}
+        {/* <HowItWorksPage /> */}
         <HealthPulseFooter />
       </div>
     </>
