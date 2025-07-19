@@ -86,9 +86,9 @@ export default function HowItWorksPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto text-center">
-        <h1 className="text-2xl tracking-tight text-primary sm:text-5xl md:text-6xl font-poppins">
-          Your Circle of Care <span className="text-secondary">Journey</span>
-        </h1>
+      <h1 className="text-xl sm:text-3xl relative bottom-4 lg:text-4xl font-bold">
+      Your Circle of Care <span className="text-secondary">Journey</span>
+            </h1>
         <p className="mt-4 text-xl text-primary font-poppins">
           Discover how easy it is to get the care you need, step by step.
         </p>
